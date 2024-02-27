@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { FaAngleRight } from "react-icons/fa6";
+import { useSelector } from 'react-redux';
 
 
 interface SectionProps {
@@ -8,7 +9,18 @@ interface SectionProps {
 }
 const Section: React.FC<SectionProps> = (props) => {
     const { data } = props;
+    const currentWidth = window.innerWidth;
 
+    let limit = 5;
+    if (currentWidth < 600) {
+        limit = 2;
+    }
+    else if (currentWidth < 1000) {
+        limit = 4;
+    }
+    else if (currentWidth < 800) {
+        limit = 3;
+    }
     const navigateTo = useNavigate();
     return (
         <div className='mt-12 px-[59px] flex flex-col gap-5'>
@@ -18,10 +30,9 @@ const Section: React.FC<SectionProps> = (props) => {
                     <span className='text-12-16'>TẤT CẢ</span>
                     <FaAngleRight size={20} />
                 </div>
-
             </div>
             <div className='flex items-start justify-between gap-7'>
-                {data && data?.items && data?.items?.filter((item: any, index: number) => index <= 4).map((item: any) => (
+                {data && data.items && data.items.slice(0, limit).map((item: any) => (
                     <div
                         key={item.encodeId}
                         onClick={() => {

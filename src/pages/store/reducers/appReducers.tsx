@@ -13,6 +13,7 @@ interface AppState {
     favoritedArtist: object;
     chart: any;
     rank: any;
+    currentWidth: null
 }
 
 const initState: AppState = {
@@ -27,6 +28,7 @@ const initState: AppState = {
     favoritedArtist: {},
     chart: {},
     rank: [],
+    currentWidth: null
 }
 
 const appReducer = (state: AppState = initState, action: any) => {
@@ -45,6 +47,11 @@ const appReducer = (state: AppState = initState, action: any) => {
                 favoritedArtist: action.homeData?.find((item: any) => item.sectionId === 'hMix') || {},
                 chart: action.homeData?.find((item: any) => item.sectionId === 'hZC')?.chart || {},
                 rank: action.homeData?.find((item: any) => item.sectionId === 'hZC')?.items || [],
+            }
+        case actionTypes.CURREN_WIDTH:
+            return {
+                ...state,
+                currentWidth: action.width
             }
         default:
             return state

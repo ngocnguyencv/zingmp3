@@ -14,11 +14,11 @@ const Public = () => {
     const toggleSidebar = () => {
         setShowSidebar(!showSidebar);
     }
-
+    const currentWidth = window.innerWidth;
     return (
         <div className="w-full h-screen flex flex-col bg-main-300">
             <div className="w-full h-full flex flex-auto">
-                <div className="w-[240px] min-h-screen  left-0 top-0 z-10 flex-none overflow-hidden ">
+                <div className="min-h-screen left-0 top-0 z-10 flex-none overflow-hidden ">
                     <SidebarLeft />
                 </div>
                 <div className="flex-auto flex flex-col ">
@@ -34,14 +34,14 @@ const Public = () => {
                     </div>
                 </div>
                 {showSidebar &&
-                    <div className="w-[329px] fixed right-0">
+                    <div className="w-[329px] fixed right-0 z-20">
                         <div className="h-[100vh] flex-none overflow-y-auto scrollbar-width-thin scrollbar-thumb-blue">
                             <SidebarRight />
                         </div>
                     </div>
                 }
             </div>
-            <div className="flex-none fixed bottom-0 inset-x-0 z-10">
+            <div className="flex-none fixed bottom-0 inset-x-0 z-30">
                 <Player toggleSidebar={toggleSidebar} />
             </div>
         </div>

@@ -6,10 +6,11 @@ import path from './ultis/path';
 import { Dispatch, useEffect, useState } from 'react';
 // import { useDispatch } from 'react-redux';
 import { getHome } from './api';
-import { useDispatch } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
 import * as action from './pages/store/actions'
 import WeekRank from './component/chart/WeekRank'
 // import Counter from './count/Count';
+
 
 function App() {
 
@@ -31,9 +32,10 @@ function App() {
       window.removeEventListener('resize', setWidth)
     }
   })
-  // useEffect(() => {
-  //   dispatch(action.setCurrentWidth(currentWidth));
-  // }, [currentWidth, dispatch]);
+  useEffect(() => {
+    dispatch(action.setCurrentWidth(currentWidth));
+  }, [currentWidth, dispatch]);
+  console.log(currentWidth)
   return (
     <Routes>
       <Route path={path.PUBLIC} element={<Public />} >
@@ -48,9 +50,7 @@ function App() {
         {/* <Route path={path.STAR} element={<Home />} /> */}
 
       </Route>
-
-    </Routes>
-
+    </Routes >
   );
 }
 

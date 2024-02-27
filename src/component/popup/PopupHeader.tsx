@@ -12,8 +12,8 @@ interface PopupHeaderProps {
 
 const PopupHeader: React.FC<PopupHeaderProps> = ({ closePopup }) => {
   return (
-    <div className=' w-[290px] absolute top-[60px] right-[320px] rounded-md flex flex-col bg-gray-200  overflow-y-auto px-[10px]'>
-      <div className='flex flex-col border border-b-black p-[10px] mb-[10px]'>
+    <div className=' w-[320px] absolute top-[60px]  bg-gray-200 right-[320px] rounded-md flex flex-col overflow-y-auto scrollbar-custom px-[10px] h-[400px]'>
+      <div className='flex flex-col border border-b-black mb-[10px]'>
         <div className='p-[10px] mb-[10px] flex flex-col gap-4'>
           <div className='flex gap-3'>
             <img src={VSN} alt="" className='w-[64px] h-[64px] object-cover rounded-full' />
@@ -25,14 +25,13 @@ const PopupHeader: React.FC<PopupHeaderProps> = ({ closePopup }) => {
           <span className=' rounded-full bg-gray-300 w-auto flex justify-center items-center py-[6px]'>Nâng cấp tài khoản</span>
         </div>
         <div>
-          <span className='mb-[8px]' >Nâng cấp gói</span>
-
-          <img className="h-[177px] w-[262px] py-3 px-4 " src={AnhImg} alt="" />
-          <img className="h-[177px] w-[262px] py-3 px-4" src={AnhImg} alt="" />
+          <span className='mb-[8px] text-[#32323d] font-inter-900' >Nâng cấp gói</span>
+          <img className="h-[177px] w-[262px] py-3 " src={AnhImg} alt="" />
+          <img className="h-[177px] w-[262px] py-3 items-center " src={AnhImg} alt="" />
 
         </div>
       </div >
-      <div className='border border-b-white flex flex-col'>
+      <div className='border border-b-black flex flex-col'>
         <span className='text-16-24 font-inter-900 mb-2 px-[10px]'>Cá nhân</span>
         <div className='flex items-center gap-2 py-3 px-[10px]'>
           <MdBlockFlipped size={20} />

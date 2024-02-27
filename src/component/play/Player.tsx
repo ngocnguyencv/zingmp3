@@ -34,7 +34,7 @@ const Player: React.FC<PlayerProps> = ({ toggleSidebar }) => {
         }
         fetchDetailSong()
     }, [curSongId])
-
+    const currentWidth = window.innerWidth;
     return (
         // <div>gg</div>
         <div>
@@ -47,7 +47,7 @@ const Player: React.FC<PlayerProps> = ({ toggleSidebar }) => {
                     </div>
                     <div className='flex gap-4 py-10 pl-5'>
                         <GiSelfLove size={20} />
-                        <IoIosMore size={20} />
+                        {currentWidth < 1000 ? null : <IoIosMore size={20} className=' ' />}
                     </div>
                     {/* <img src={songInfo?.thumbnail} alt="thumbnail" className='w-16 h-16 object-cover rounded-md' /> */}
 
