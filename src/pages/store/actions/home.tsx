@@ -31,3 +31,9 @@ export const getHome = () => async (dispatch: Dispatch<any>) => {
         });
     }
 };
+export const setCurrentWidth = (width: number) => {
+    return {
+        type: 'SET_CURRENT_WIDTH',
+        width
+    };
+};

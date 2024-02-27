@@ -100,13 +100,13 @@ const ChartSection: React.FC = () => {
         setData({ labels, datasets });
     }, [chart]);
     return (
-        <div className='mt-12 px-[59px] relative max-h-[400px]'>
-            <img src={imgchart} alt="" className='w-full object-contain rounded-md max-h-[400px]' />
-            <div className='absolute top-0 z-20 left-[59px] right-[59px] bottom-0 bg-[rgba(115,20,140,0.9)]'></div>
-            <div className='absolute top-0 z-20 left-[59px] right-[59px] bottom-0 p-5 flex flex-col gap-8'>
+        <div className='mt-12 px-[59px] relative lg:max-h-[480px] h-[820px]'>
+            <img src={imgchart} alt="" className='w-full object-cover rounded-md lg:max-h-[480px] h-[820px]' />
+            <div className='absolute top-0 z-auto left-[59px] right-[59px] bottom-0 bg-[rgba(115,20,140,0.9)]'></div>
+            <div className='absolute top-0 z-auto left-[59px] right-[59px] bottom-0 p-5 flex flex-col gap-8'>
                 <h3 className='text-28-36 font-bold text-white'>#zingchart</h3>
-                <div className='flex gap-4 h-full'>
-                    <div className='flex-4 flex flex-col gap-2  items-center'>
+                <div className='flex lg:flex-row flex-col gap-4 h-full'>
+                    <div className='flex-4 flex flex-col gap-2 items-center'>
                         {rank?.filter((i: any, index: any) => index < 3)?.map((item: any, index: any) => (
                             <SongItem
                                 thumbnail={item.thumbnail}

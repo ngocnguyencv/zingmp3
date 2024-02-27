@@ -12,9 +12,16 @@ import HackerNew from "../../new/HackerNew";
 
 const Home = () => {
     const { friday, chill, albumhot, remix, xone, weekChart, favoritedArtist } = useSelector((state: any) => state.app)
+    const currentWidth = window.innerWidth;
+    let limit = 16;
+    let columns = 8;
+    if (currentWidth < 1000) {
+        limit = 16;
+        columns = 4
+    }
     return (
         <div className=" cursor-pointer overflow-y-auto flex-auto justify-between scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-gray-400">
-            <div id="header" className="flex items-center justify-between fixed h-[70px] px-[59px] bg-main-300 w-full">
+            <div id="header" className="flex items-center z-10 justify-between fixed h-[70px] px-[59px] bg-main-300 w-full">
                 <Header />
             </div>
             <div className="mt-16">   <Slider /></div>
@@ -55,17 +62,19 @@ const Home = () => {
             </div> */}
             <div className="m-12">
                 <span className="flex items-center justify-center text-24-30 cursor-pointer mb-6 hover:text-blue-900 font-inter-500 text-gray-500">Đối tác âm nhạc</span>
-                <div className="gap-2 items-center justify-center mt-4 grid grid-cols-8 ml-12">
-                    {
-                        listPartner.map((item: any) => (
-                            <img
-                                key={item.images}
-                                src={item.images}
-                                alt="partner-logo"
-                                className="h-[50px] w-[73px] bg-white p-1 rounded-lg "
-                            />
-                        ))
-                    }
+                <div>
+                    <div className={`${columns === 4 ? 'gap-4' : 'gap-2'} items-center justify-center mt-4 grid grid-cols-${columns} `}>
+                        {
+                            listPartner.slice(0, limit).map((item: any) => (
+                                <img
+                                    key={item.images}
+                                    src={item.images}
+                                    alt="partner-logo"
+                                    className={`h-${columns === 4 ? '70' : '50'}px w-${columns === 4 ? '80' : '73'}px bg-white p-1 rounded-lg`}
+                                />
+                            ))
+                        }
+                    </div>
                 </div>
                 <HackerNew></HackerNew>
                 {/* <Counter></Counter> */}

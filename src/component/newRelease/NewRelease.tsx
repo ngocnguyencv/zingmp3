@@ -6,6 +6,20 @@ import SongItem from '../SongItem';
 const NewRelease = () => {
     const { newRelease } = useSelector((state: any) => state.app)
     const [activeButton, setActiveButton] = useState(false);
+
+    const currentWidth = window.innerWidth;
+    let limit = 21;
+    let columns = 3;
+    if (currentWidth < 1000) {
+        limit = 14;
+        columns = 2
+    }
+    if (currentWidth < 600) {
+        limit = 7;
+        columns = 1
+    }
+
+
     return (
         <div className='mt-12 px-[59px] flex flex-col gap-5'>
             <div className='flex items-center justify-between'>
@@ -32,8 +46,9 @@ const NewRelease = () => {
                     </ButtonCommon>
                 </div>
                 <div>
-                    <div className='grid grid-cols-3 mt-4'>
-                        {newRelease?.items?.vPop?.map((item: any) => (
+
+                    <div className={`grid grid-cols-${columns} mt-4`}>
+                        {newRelease?.items?.vPop.slice(0, limit).map((item: any) => (
                             <div key={item.encodeId} className=''>
                                 <SongItem
                                     order={''}
@@ -45,6 +60,7 @@ const NewRelease = () => {
                                     releaseDate={''} />
                             </div>
                         ))}
+
                     </div>
                 </div>
             </div>

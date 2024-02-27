@@ -17,6 +17,8 @@ import { IoVolumeHighOutline } from "react-icons/io5";
 import { BsMusicNoteList } from "react-icons/bs";
 import { GiAlarmClock } from "react-icons/gi";
 import { LuAlarmClock } from "react-icons/lu";
+import { GoArrowUpRight } from "react-icons/go";
+import { PiBroom } from "react-icons/pi";
 
 const icons = {
     MdOutlineLibraryMusic,
@@ -38,6 +40,8 @@ const icons = {
     IoVolumeHighOutline,
     BsMusicNoteList,
     LuAlarmClock,
-    GiAlarmClock
+    GiAlarmClock,
+    GoArrowUpRight,
+    PiBroom
 }
 export default icons

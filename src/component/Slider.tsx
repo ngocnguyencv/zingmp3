@@ -9,7 +9,12 @@ const Slider: React.FC = () => {
     const { banner } = useSelector((state: any) => state.app);
     const dispatch = useDispatch();
     const navigateTo = useNavigate();
-    
+    const currentWidth = window.innerWidth;
+    let limit = 3;
+    if (currentWidth < 1200) {
+        limit = 2;
+    }
+
     // useEffect(() => {
     //     const sliderEls = document.getElementsByClassName('slider-item')
     //     let min = 0
@@ -54,6 +59,7 @@ const Slider: React.FC = () => {
             dispatch(actions.play(true));
         } else if (item?.type === 4) {
             const albumPath = item?.link?.split('.')[0];
+            console.log(albumPath)
             if (albumPath) {
                 navigateTo(albumPath as string);
             }
@@ -63,12 +69,12 @@ const Slider: React.FC = () => {
     return (
         <div className='w-full overflow-hidden px-[59px]'>
             <div className=' w-full flex gap-8 pt-8 overflow-hidden'>
-                {banner?.map((item: any, index: number) => (
+                {banner?.slice(0, limit).map((item: any, index: number) => (
                     <img
                         key={item.encodeId}
                         src={item.banner}
                         onClick={() => handleClickBanner(item)}
-                        className={`slider-item flex-1 flex-col h-[150px] w-[230px] rounded-lg ${index <= 2 ? 'block' : 'hidden'}`}
+                        className={`slider-item flex-1 h-[200px] w-[300px] rounded-lg ${index <= 2 ? 'block' : 'hidden'}`}
                     />
                 ))}
             </div>

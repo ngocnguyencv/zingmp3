@@ -1,8 +1,9 @@
 import icons from "./icon"
 import VSN from '../assests/image/Vuong_So_Nhien12.webp';
+import { MdOutlineSecurity } from "react-icons/md";
+import { FaAngleRight } from "react-icons/fa6";
 
-const { MdOutlineLibraryMusic, FaRegCirclePlay } = icons
-
+const { MdOutlineLibraryMusic, FaRegCirclePlay, GoArrowUpRight } = icons
 export const sidebarMenu = [
     // {
     //     path: 'personal',
@@ -279,5 +280,62 @@ export const listPlaylist = [
 
     },
 
+
+]
+
+export const listMenuSetting = [
+    {
+        key: 1,
+        icon0: <FaRegCirclePlay size={20} />,
+        text: 'Giới thiệu',
+    },
+    {
+        key: 2,
+        icon0: <FaRegCirclePlay size={20} />,
+        text: 'Thỏa thuận sử dụng',
+        icon1: <GoArrowUpRight size={24} />
+    },
+    {
+        key: 3,
+        icon0: <MdOutlineSecurity size={20} />,
+        text: 'Chính sách bảo mật',
+        icon1: <GoArrowUpRight size={24} />
+    },
+    {
+        key: 4,
+        icon0: <FaRegCirclePlay size={20} />,
+        text: 'Báo cáo vi phạm bản quyên',
+        icon1: <GoArrowUpRight size={24} />
+    },
+    {
+        key: 5,
+        icon0: <FaRegCirclePlay size={20} />,
+        text: 'Quảng cáo ',
+        icon1: <GoArrowUpRight size={24} />
+    },
+    {
+        key: 6,
+        icon0: <FaRegCirclePlay size={20} />,
+        text: 'Liên hệ',
+        icon1: <GoArrowUpRight size={24} />
+    },
+]
+
+export const popupMenuOther = [
+    {
+        icon: <MdOutlineLibraryMusic size={20} />,
+        text: 'Xóa danh sách phát',
+
+    },
+    {
+        icon: <MdOutlineLibraryMusic size={20} />,
+        text: 'Xóa danh sách phát',
+
+    },
+    {
+        icon: <MdOutlineLibraryMusic size={20} />,
+        text: 'Xóa danh sách phát',
+        icons: <FaAngleRight size={20} />
+    },
 
 ]

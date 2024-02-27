@@ -5,6 +5,7 @@ import VSN from '../../assests/image/Vuong_So_Nhien12.webp';
 import { IoSettingsOutline } from "react-icons/io5";
 import { HiOutlineInboxArrowDown } from "react-icons/hi2";
 import PopupHeader from '../popup/PopupHeader';
+import PopupSetting from '../popup/PopupSetting';
 
 const Header = () => {
     // useEffect(() => {
@@ -30,6 +31,11 @@ const Header = () => {
         setShowMenu(!showMenu);
     };
 
+    const [showMenu1, setShowMenu1] = useState(false);
+
+    const toggleMenu1 = () => {
+        setShowMenu1(!showMenu1);
+    };
     return (
         <div id="header" className='flex justify-between w-full items-center cursor-pointer'>
             <div className='flex gap-6 w-full items-center'>
@@ -47,7 +53,11 @@ const Header = () => {
                     <span className='text-18-26 text-[#0F7070] font-inter-900 font-semibold p-2 c'>Tải bản window</span>
                 </div>
                 <div className='flex gap-3 w-[100px] cursor-pointer'>
-                    <IoSettingsOutline className='w-[38px] h-[38px] bg-main-100 rounded-full p-2' />
+                    <IoSettingsOutline onClick={toggleMenu1} className='w-[38px] h-[38px] bg-main-100 rounded-full p-2' />
+                    {showMenu1 && <PopupSetting closePopup={function (): void {
+                        throw new Error('Function not implemented.');
+                    }} />}
+
                     <img src={VSN} onClick={toggleMenu} alt="" className='w-[40px] h-[40px] object-cover rounded-full' />
                 </div>
 
