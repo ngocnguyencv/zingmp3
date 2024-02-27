@@ -39,20 +39,20 @@ const Player: React.FC<PlayerProps> = ({ toggleSidebar }) => {
         // <div>gg</div>
         <div>
             <div className='bg-main-400 h-auto flex-none  px-5 flex w-full'>
-                <div className='w-[30%] flex flex-auto gap-3  pl-5 items-center'>
+                <div className='w-[30%] flex flex-auto gap-3  pl-5 items-center '>
                     <img src={VSN} alt="" className='w-[64px] h-[64px] object-cover rounded-md' />
                     <div className='flex flex-col'>
                         <span className=' text-[#32323D] text-sm'>Đi qua cơn giông</span>
                         <span className='text-xs text-gray-500'>Nhật</span>
                     </div>
                     <div className='flex gap-4 py-10 pl-5'>
-                        <GiSelfLove size={20} />
+                        {currentWidth < 1000 ? null : <GiSelfLove size={20} className=' ' />}
                         {currentWidth < 1000 ? null : <IoIosMore size={20} className=' ' />}
                     </div>
                     {/* <img src={songInfo?.thumbnail} alt="thumbnail" className='w-16 h-16 object-cover rounded-md' /> */}
 
                 </div>
-                <div className='w-[40%] flex flex-auto gap-4 flex-col items-center justify-between'>
+                <div className='w-full sm:w-[40%] flex flex-auto gap-4 flex-col items-center justify-between mb-4 sm:mb-0'>
                     <div className='flex flex-col justify-between ' >
                         <div className='flex pt-5 gap-10 justify-center items-center'>
                             <PiShuffle size={20} />
@@ -72,9 +72,10 @@ const Player: React.FC<PlayerProps> = ({ toggleSidebar }) => {
                         </div>
                     </div>
                 </div>
-                <div className='w-[30%] flex flex-auto flex-row justify-end items-center gap-4'>
-                    <VscMultipleWindows size={20} />
-                    <IoVolumeMediumOutline size={20} />
+                <div className='w-full sm:w-[30%] flex flex-auto flex-row justify-end items-center gap-4 mb-4 sm:mb-0'>
+                    {currentWidth < 1000 ? null : <VscMultipleWindows size={20} className=' ' />}
+                    {currentWidth < 1000 ? null : <IoVolumeMediumOutline size={20} className=' ' />}
+
                     <input type="range" step={1} min={0} max={100} value={50} />
                     <span className='p-1 rounded-sm cursor-pointer bg-main-500 opacity-90 hover:opacity-1' onClick={toggleSidebar}><RiPlayListLine /></span>
                 </div>
