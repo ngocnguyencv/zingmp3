@@ -44,9 +44,9 @@ const Section: React.FC<SectionProps> = (props) => {
                             alt='avatar'
                             className={` ${data?.sectionId === 'hLiveRadio' ? 'w-full object-contain rounded-full h-auto' : 'w-full object-contain rounded-lg h-auto'}`} />
                         <span className='flex flex-col'>
-                            <span className='font-semibold'>{typeof item.title === 'string' && item.title.slice(0, 30) + '...'} </span>
+                            <span className='font-semibold'>{typeof item.title === 'string' && item.title.slice(0, 25) + '...'} </span>
                             {data?.sectionId === 'h100' ? <span>{item.artistsNames}</span> : <span> {typeof item.sortDescription === 'string' && item.sortDescription.length >= 40
-                                ? item.sortDescription.slice(0, 30) + '...'
+                                ? item.sortDescription.slice(0, 40) + '...'
                                 : item.sortDescription}</span>}
                         </span>
                     </div>

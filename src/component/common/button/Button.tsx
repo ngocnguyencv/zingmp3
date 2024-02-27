@@ -18,13 +18,13 @@ export function ButtonCommon({
     const handleClick = () => {
         setIsActive(!isActive);
     };
-    
+
 
     return (
         <button
             type='button'
             className={style ? style :
-                `py-1 px-4 h-[30px] w-[120px] rounded-l-full rounded-r-full border bg-transparent items-center
+                `py-1 px-4 h-[30px] w-[140px] rounded-l-full rounded-r-full border bg-transparent items-center
                   justify-center text-16-24 border-gray-400`}
         >
             {text}

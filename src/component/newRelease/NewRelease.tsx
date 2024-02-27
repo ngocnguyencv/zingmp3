@@ -8,18 +8,10 @@ const NewRelease = () => {
     const [activeButton, setActiveButton] = useState(false);
 
     const currentWidth = window.innerWidth;
-    let limit = 21;
-    let columns = 3;
+    let limit = 12;
     if (currentWidth < 1000) {
-        limit = 14;
-        columns = 2
+        limit = 8;
     }
-    if (currentWidth < 600) {
-        limit = 7;
-        columns = 1
-    }
-
-
     return (
         <div className='mt-12 px-[59px] flex flex-col gap-5'>
             <div className='flex items-center justify-between'>
@@ -46,8 +38,7 @@ const NewRelease = () => {
                     </ButtonCommon>
                 </div>
                 <div>
-
-                    <div className={`grid grid-cols-${columns} mt-4`}>
+                    <div className={`grid lg:grid-cols-3 md:grid-cols-2 gap-3 mt-4`}>
                         {newRelease?.items?.vPop.slice(0, limit).map((item: any) => (
                             <div key={item.encodeId} className=''>
                                 <SongItem
