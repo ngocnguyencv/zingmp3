@@ -12,12 +12,9 @@ import { CountQueuingStrategy } from "node:stream/web";
 const Home = () => {
     const { friday, chill, albumhot, remix, xone, weekChart, favoritedArtist } = useSelector((state: any) => state.app)
 
-
     return (
         <div className=" cursor-pointer overflow-y-auto flex-auto justify-between scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-gray-400">
-            <div id="header" className="flex items-center z-10 justify-between fixed h-[70px] px-[59px] bg-main-300 w-full">
-                <Header />
-            </div>
+
             <div className="mt-16">   <Slider /></div>
             <Section data={friday} />
             <Section data={chill} />
