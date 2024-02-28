@@ -16,16 +16,16 @@ const Public = () => {
     }
     const currentWidth = window.innerWidth;
     return (
-        <div className="w-full h-screen flex flex-col bg-main-300">
+        <div className="w-full relative h-screen flex flex-col bg-main-300">
             <div className="w-full h-full flex flex-auto">
                 <div className="min-h-screen left-0 top-0 z-10 flex-none overflow-hidden ">
                     <SidebarLeft />
                 </div>
-                <div className="flex-auto flex flex-col ">
-                    {/* <div>
-                        <Header />
-                    </div> */}
+                <div className="flex-auto flex flex-col">
                     <div className="flex-auto w-full">
+                        <div id="header" className="flex items-center z-10 justify-between fixed h-[70px] px-[59px] bg-main-300 w-full">
+                            <Header />
+                        </div>
                         <Scrollbars style={{ width: '100%', height: '100%', scrollbarWidth: 'thin', scrollbarColor: 'blue transparent' }}>
                             <Outlet />
                         </Scrollbars>
