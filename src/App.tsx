@@ -1,7 +1,7 @@
 import './App.css';
 import './index.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { Home, Public, Login, Personal, Album } from './pages/public';
+import { Home, Public, Login, Personal, Album, ZingChart } from './pages/public';
 import path from './ultis/path';
 import { Dispatch, useEffect, useState } from 'react';
 import { getHome } from './api';
@@ -40,6 +40,8 @@ function App() {
       <Route path={path.PLAYLIST__TITLE__PID} element={<Album />} /> */}
         <Route path={path.WEEKRANK_TITLE_PID} element={<WeekRank />} />
         <Route path={path.ALBUM_TITLE_PID} element={<Album err={undefined} data={undefined} />} />
+        <Route path={path.ZING_CHART} element={<ZingChart data={undefined} err={0} />} />
+
         {/* <Route path={path.STAR} element={<Home />} /> */}
       </Route>
     </Routes >

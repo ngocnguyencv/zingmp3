@@ -5,5 +5,9 @@ export { default as Personal } from "./Personal";
 export { default as WeekRank } from "../../component/chart/WeekRank";
 export { default as Album } from "./Album";
 export { default as Lists } from "../../component/list/Lists";
+export { default as ZingChart } from "./ZingChart";
+
+
+
 
 
