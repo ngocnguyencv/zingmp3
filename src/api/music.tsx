@@ -37,3 +37,17 @@ export const apiGetDetailPlaylist = (pid: any) => new Promise(async (resolve, re
         reject(error)
     }
 })
+
+export const apiGetChartHome = (pid: any) => new Promise(async (resolve, reject) => {
+    try {
+        const response = await axios({
+            url: 'https://api-zingmp3-vercel.vercel.app/api/charthome',
+            method: 'get',
+            params: { id: pid }
+        })
+        resolve(response)
+    } catch (error) {
+        reject(error)
+    }
+})
+
