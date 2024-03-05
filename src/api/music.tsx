@@ -1,4 +1,6 @@
 import axios from "axios"
+import { reject } from "lodash"
+import { resolve } from "path"
 
 export const apiGetSong = (sid: any) => new Promise(async (resolve, reject) => {
     try {
@@ -44,6 +46,19 @@ export const apiGetChartHome = (pid: any) => new Promise(async (resolve, reject)
             url: 'https://api-zingmp3-vercel.vercel.app/api/charthome',
             method: 'get',
             params: { id: pid }
+        })
+        resolve(response)
+    } catch (error) {
+        reject(error)
+    }
+})
+
+export const apiSearch = (keyword: string) => new Promise(async (resolve, reject) => {
+    try {
+        const response = await axios({
+            url: 'https://api-zingmp3-vercel.vercel.app/api/search',
+            method: 'get',
+            params: { keyword }
         })
         resolve(response)
     } catch (error) {

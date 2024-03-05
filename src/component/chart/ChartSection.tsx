@@ -23,8 +23,8 @@ const ChartSection: React.FC = () => {
         opacity: 0,
         left: 0,
         top: 0,
-
     }
+
     )
     const options = {
         responsive: true,
@@ -101,7 +101,7 @@ const ChartSection: React.FC = () => {
     }, [chart]);
     return (
         <div className='mt-12 px-[59px] relative lg:max-h-[480px] h-[820px]'>
-            <img src={imgchart} alt="" className='w-full object-cover rounded-md lg:max-h-[480px] h-[820px]' />
+            <img src={imgchart} alt="" className='w-full object-cover rounded-md lg:max-h-[400px] h-[820px]' />
             <div className='absolute top-0 z-auto left-[59px] right-[59px] bottom-0 bg-[rgba(115,20,140,0.9)]'></div>
             <div className='absolute top-0 z-auto left-[59px] right-[59px] bottom-0 p-5 flex flex-col gap-8'>
                 <h3 className='text-28-36 font-bold text-white'>#zingchart</h3>
@@ -129,13 +129,13 @@ const ChartSection: React.FC = () => {
                                 position: 'absolute'
                             }}>
                             {/* <SongItem
-                                thumbnail={item.thumbnail}
-                                title={item.title}
-                                artists={item.artistsNames}
-                                sid={item.encodeId}
-                                order={index + 1}
-                                percent={Math.round(+item.score * 100 / +chart?.totalScore)}
-                                releaseDate={''} /> */}
+                                    thumbnail={item.thumbnail}
+                                    title={item.title}
+                                    artists={item.artistsNames}
+                                    sid={item.encodeId}
+                                    order={index + 1}
+                                    percent={Math.round(+item.score * 100 / +chart?.totalScore)}
+                                    releaseDate={''} /> */}
                         </div>
                     </div>
                 </div>
