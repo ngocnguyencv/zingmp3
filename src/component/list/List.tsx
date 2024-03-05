@@ -14,6 +14,7 @@ type CheckedState = {
 };
 
 const List: React.FC<ListProps> = ({ songData }) => {
+    const [isHidden, setIsHidden] = useState(false)
     const dispatch = useDispatch()
     const [isHovered, setIsHovered] = useState(false);
     const [checkedState, setCheckedState] = useState<CheckedState>({});
@@ -24,7 +25,6 @@ const List: React.FC<ListProps> = ({ songData }) => {
             [id]: !prevState[id],
         }));
     };
-    // console.log(checkedState);
     return (
         <div
             className='flex justify-between items-center border-t border-[rgba(0,0,0,0.05)] hover:bg-[#DDE4E4] cursor-pointer'
@@ -46,15 +46,17 @@ const List: React.FC<ListProps> = ({ songData }) => {
                         onChange={handleCheckboxClick}
                         className='cursor-pointer size-6'></input>
                 ) : (
+                    !isHidden &&
                     <span><BsMusicNoteBeamed className='text-gray-500' /></span>
                 )}
-                <img src={songData?.thumbnail} alt="thumbnailM" className='w-10 h-10 object-cover rounded-md' />
+                {/* {!isHidden && <span><BsMusicNoteBeamed className='text-gray-500' /></span>} */}
+                <img src={songData?.thumbnail} alt="thumbnailM" className='size-[40px] object-cover rounded-md' />
                 <span className='flex flex-col w-full'>
                     <span className='text-sm font-semibold'>{songData?.title?.length > 30 ? `${songData?.title?.slice(0, 10)}...` : songData?.title}</span>
                     <span>{songData?.artistsNames.length > 20 ? `${songData?.artistsNames.slice(0, 10)}...` : songData?.artistsNames}</span>
                 </span>
             </div>
-            <div className='flex-1 flex items-center justify-center m-10'>
+            <div className='flex-1 flex items-center justify-center m-10 text-12-18 text-gray-500'>
                 {songData?.album?.title?.length > 25 ? `${songData?.album?.title?.slice(0, 10)}...` : songData?.album?.title}
             </div>
             <div className='flex-1 flex justify-end'>
