@@ -9,7 +9,8 @@ const path = {
     ZING_CHART: 'zing-chart',
     SEARCH: 'tim-kiem',
     ALL: 'tat-ca',
-    SONG:'bai-hat'
+    SONG:'bai-hat',
+
 
 }
 export default path;

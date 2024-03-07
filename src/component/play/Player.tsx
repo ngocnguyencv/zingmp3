@@ -27,7 +27,6 @@ const Player: React.FC<PlayerProps> = ({ toggleSidebar }) => {
     useEffect(() => {
         const fetchDetailSong = async () => {
             const response = await apis.apiGetSong(curSongId) as AxiosResponse<any>;
-            console.log(response)
             if (response.data.err === 0) {
                 setSongInfo(response.data.data)
             }
