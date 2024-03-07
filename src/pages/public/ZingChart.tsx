@@ -48,6 +48,7 @@ const ZingChart: React.FC<APIResponse> = () => {
             if (response?.data?.err === 0)
                 setchartData(response?.data.data)
             console.log(response)
+            console.log(chartData?.RTChart?.items)
         }
         fetchDataChart()
     }, [])

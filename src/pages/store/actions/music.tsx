@@ -12,10 +12,16 @@ export const play = (flag: any) => ({
 })
 export const search = (keyword: string) => (async (dispatch: any) => {
     try {
-        const response:any = await apis.apiSearch(keyword)
+        const response: any = await apis.apiSearch(keyword)
         if (response.data.err === 0) {
             dispatch({
-                type: actionTypes.SEARCH
+                type: actionTypes.SEARCH,
+                data: response.data.data
+            })
+        } else {
+            dispatch({
+                type: actionTypes.SEARCH,
+                data: null
             })
         }
     } catch (error) {

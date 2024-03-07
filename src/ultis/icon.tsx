@@ -19,6 +19,12 @@ import { GiAlarmClock } from "react-icons/gi";
 import { LuAlarmClock } from "react-icons/lu";
 import { GoArrowUpRight } from "react-icons/go";
 import { PiBroom } from "react-icons/pi";
+import { AiOutlineHeart } from "react-icons/ai";
+import { BsFillPlayFill } from "react-icons/bs";
+import { BsThreeDots } from "react-icons/bs";
+
+
+
 
 const icons = {
     MdOutlineLibraryMusic,
@@ -42,6 +48,9 @@ const icons = {
     LuAlarmClock,
     GiAlarmClock,
     GoArrowUpRight,
-    PiBroom
+    PiBroom,
+    AiOutlineHeart,
+    BsFillPlayFill,
+    BsThreeDots
 }
 export default icons

@@ -1,14 +1,13 @@
 import './App.css';
 import './index.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { Home, Public, Login, Personal, Album, ZingChart, SearchSong, SearchAll } from './pages/public';
+import { Home, Public, Login, Personal, Album, ZingChart, SearchSong, SearchAll, Search } from './pages/public';
 import path from './ultis/path';
 import { Dispatch, useEffect, useState } from 'react';
 import { getHome } from './api';
 import { Provider, useDispatch } from 'react-redux';
 import * as action from './pages/store/actions'
 import WeekRank from './component/chart/WeekRank'
-import { Search } from './component';
 
 
 function App() {

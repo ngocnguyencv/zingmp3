@@ -14,3 +14,10 @@ export const getArrSlider = (start: number, end: number, number: number): number
 
     return output;
 };
+export const handlNumber = (number: number) => {
+    if (number > Math.pow(10, 6)) {
+        return `${Math.round(number * 10 / Math.pow(10, 6)) / 10}M`
+    } else {
+        return `${Math.round(number * 10 / Math.pow(10, 6)) * 100}K`
+    }
+}

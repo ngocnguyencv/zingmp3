@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { FaAngleRight } from "react-icons/fa6";
 import { useSelector } from 'react-redux';
+import SectionItem from './SectionItem';
 
 
 interface SectionProps {
@@ -49,6 +50,13 @@ const Section: React.FC<SectionProps> = (props) => {
                                 ? item.sortDescription.slice(0, 40) + '...'
                                 : item.sortDescription}</span>}
                         </span>
+                        {/* <SectionItem
+                            link={item.link}
+                            title={item.title}
+                            thumbnailM={item.thumbnailM}
+                            artistsNames={item.artistsNames}
+                            data={data}
+                            sortDescription={item.sortDescription} /> */}
                     </div>
                 ))
                 }

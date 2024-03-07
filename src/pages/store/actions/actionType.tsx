@@ -3,6 +3,8 @@ const actionType = {
   SET_CUR_SONG_ID: 'SET_CUR_SONG_ID',
   PLAY: 'PLAY',
   CURREN_WIDTH: 'CURREN_WIDTH',
-  SEARCH: 'SEARCH'
+  SEARCH: 'SEARCH',
+  ALL: 'ALL'
+
 }
 export default actionType;

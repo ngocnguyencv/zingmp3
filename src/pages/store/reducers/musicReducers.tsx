@@ -3,10 +3,12 @@ import { Reducer } from 'redux';
 
 interface MusicState {
     curSongId: null | string;
+    searchData: {}
 }
 
 const initState: MusicState = {
-    curSongId: null
+    curSongId: null,
+    searchData: {}
 }
 
 const musicReducer: Reducer<MusicState, any> = (state = initState, action) => {
@@ -14,7 +16,12 @@ const musicReducer: Reducer<MusicState, any> = (state = initState, action) => {
         case actionType.SET_CUR_SONG_ID:
             return {
                 ...state,
-                curSongId: action.sid || null        
+                curSongId: action.sid || null
+            }
+        case actionType.SEARCH:
+            return {
+                ...state,
+                searchData: action.data || {}
             }
         default:
             return state
