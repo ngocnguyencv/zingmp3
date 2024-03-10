@@ -20,7 +20,11 @@ const Lists: React.FC<ListsProps> = ({ songs, totalDuration }) => {
             </div>
             <div className='flex flex-col'>
                 {songs?.map((item: any) => (
-                    <List key={item.encodeId} songData={item} />
+                    <List
+                        key={item.encodeId}
+                        songData={item}
+                        isHiddenAlbum={true}
+                    />
                 ))}
             </div>
             <span className='flex items-center gap-1 py-[10px] border-t border-[rgba(0,0,0,0.05)]'>

@@ -6,13 +6,14 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react';
 import reduxConfig from './redux';
-
+import loadingReducer from '../src/pages/store/reducers/loadingReducer';
+import LoadingComponent from './component/loading/Loading';
 
 const { store, persistor } = reduxConfig()
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
+    <PersistGate loading={<LoadingComponent />} persistor={persistor}>
       <BrowserRouter>
         <App />
       </BrowserRouter>

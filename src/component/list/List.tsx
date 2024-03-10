@@ -5,15 +5,15 @@ import * as actions from '../../pages/store/actions'
 import { BsMusicNoteBeamed } from "react-icons/bs";
 import { FaRegSquare } from "react-icons/fa6";
 import { FaRegSquareCheck } from "react-icons/fa6";
-
 interface ListProps {
-    songData: any
+    songData: any,
+    isHiddenAlbum: boolean
 }
 type CheckedState = {
     [key: string]: boolean;
 };
 
-const List: React.FC<ListProps> = ({ songData }) => {
+const List: React.FC<ListProps> = ({ songData, isHiddenAlbum }) => {
     const [isHidden, setIsHidden] = useState(false)
     const dispatch = useDispatch()
     const [isHovered, setIsHovered] = useState(false);
@@ -56,9 +56,10 @@ const List: React.FC<ListProps> = ({ songData }) => {
                     <span>{songData?.artistsNames.length > 20 ? `${songData?.artistsNames.slice(0, 10)}...` : songData?.artistsNames}</span>
                 </span>
             </div>
-            <div className='flex-1 flex items-center justify-center m-10 text-12-18 text-gray-500'>
-                {songData?.album?.title?.length > 25 ? `${songData?.album?.title?.slice(0, 10)}...` : songData?.album?.title}
-            </div>
+            {!isHiddenAlbum &&
+                <div className='flex-1 flex items-center justify-center m-10 text-12-18 text-gray-500'>
+                    {songData?.album?.title?.length > 25 ? `${songData?.album?.title?.slice(0, 10)}...` : songData?.album?.title}
+                </div>}
             <div className='flex-1 flex justify-end'>
                 {moment.utc(songData?.duration * 1000).format('mm:ss')}
             </div>

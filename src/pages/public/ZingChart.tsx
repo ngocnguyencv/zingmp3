@@ -32,6 +32,7 @@ interface ZingChartProps {
 }
 
 const ZingChart: React.FC<APIResponse> = () => {
+    const [loading, setLoading] = useState(true);
     const { pid } = useParams()
     const chartRef = useRef()
     const [chartData, setchartData] = useState<ChartData | null>(null)
@@ -158,7 +159,7 @@ const ZingChart: React.FC<APIResponse> = () => {
                         < List
                             key={item.encodeId}
                             songData={item}
-
+                            isHiddenAlbum={false}
                         />
                     )
                 )}

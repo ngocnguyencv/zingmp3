@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom'
 import * as apis from "../../api"
 import { AxiosResponse } from 'axios'
 import moment from 'moment'
-import Lists from '../../component/list/Lists'
-import ListArtistAlbum from '../../component/list/ListArtistAlbum'
+import Lists from '../list/Lists'
+import ListArtistAlbum from '../list/ListArtistAlbum'
 import { FaPlay } from "react-icons/fa6";
 import { BsFillCaretRightFill, BsThreeDots } from 'react-icons/bs'
 
