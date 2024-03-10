@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { handlNumber } from '../../../ultis/fn'
 import SongItem from '../../../component/SongItem'
 import { divide } from 'lodash';
 import List from '../../../component/list/List';
 import SectionItem from '../../../component/section/SectionItem';
+import ListArtistAlbum from '../../../component/list/ListArtistAlbum';
+import Artist from '../../../component/list/Artist';
+
+
 
 const SearchAll: React.FC = () => {
+  const [loading, setLoading] = useState(true);
   const { searchData } = useSelector((state: any) => state.music)
   console.log(searchData)
+  const [allSearchData, setAllSearchData] = React.useState<any[]>([]);
+  React.useEffect(() => {
+    if (searchData) {
+      setAllSearchData((prevSearchData) => [...prevSearchData, searchData]);
+    }
+  }, [searchData]);
   return (
     <div className='w-full flex flex-col gap-5 ml-[10px] px-[60px]'>
       <div>
@@ -24,7 +35,7 @@ const SearchAll: React.FC = () => {
           </div>}
           {searchData?.songs?.slice(0, 2).map((item: any) => {
             return (
-              <div key={item.encodeId} className='flex-1  bg-main-200'>
+              <div key={item.encodeId} className='flex-1 rounded-md bg-main-200'>
                 <SongItem
                   thumbnail={item.thumbnail}
                   title={item.title}
@@ -40,16 +51,15 @@ const SearchAll: React.FC = () => {
         </div>
       </div>
       <div className='flex flex-col w-full'>
-        <h3 className='font-bold  text-20-28'>BÀI HÁT</h3>
-        <div className='flex justify-between flex-wrap w-full'>
+        <h3 className='font-bold text-20-28'>BÀI HÁT</h3>
+        <div className='flex flex-wrap justify-end w-full'>
           {searchData.songs?.map((item: any) => {
             return (
-              <div key={item.encodeId}>
-                <div className=' flex flex-auto w-full h-[60px]'>
-                  <List
-                    songData={item}
-                  />
-                </div>
+              <div key={item.encodeId} className='grid grid-cols-1 h-[70px] w-full '>
+                <List
+                  songData={item}
+                  isHiddenAlbum
+                />
               </div>
             );
           })}
@@ -73,6 +83,24 @@ const SearchAll: React.FC = () => {
               );
             })}
           </div>
+        </div>
+      </div>
+      <div className='cursor-pointer flex flex-col w-full'>
+        <span className='text-20-28 font-bold'>NGHỆ SĨ/OA</span>
+        <div className='flex gap-5 items-center justify-center w-full mt-5'>
+          {searchData?.artists?.slice((i: any, index: number) => index <= 4).map((item: any) => {
+            return (
+              <div className=''>
+                <Artist
+                  key={item.id}
+                  image={item.thumbnailM}
+                  title={item.name}
+                  follower={item.totalFollow}
+                  link={item.link}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className='h-[100px]'>

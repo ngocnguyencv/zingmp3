@@ -1,7 +1,7 @@
 import './App.css';
 import './index.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { Home, Public, Login, Personal, Album, ZingChart, SearchSong, SearchAll, Search } from './pages/public';
+import { Home, Public, Login, Personal, Album, ZingChart, SearchSong, SearchAll, Search, Singer } from './pages/public';
 import path from './ultis/path';
 import { Dispatch, useEffect, useState } from 'react';
 import { getHome } from './api';
@@ -37,6 +37,8 @@ function App() {
         <Route path={path.HOME} element={<Home />} />
         <Route path={path.LOGIN} element={<Login />} />
         <Route path={path.MY_MUSIC} element={<Personal />} />
+        <Route path={path.HOME_SINGER} element={<Singer />} />
+
         {/* <Route path={path.ALBUM__TITLE__PID} element={<Album />} />
        <Route path={path.PLAYLIST__TITLE__PID} element={<Album />} /> */}
         <Route path={path.WEEKRANK_TITLE_PID} element={<WeekRank />} />

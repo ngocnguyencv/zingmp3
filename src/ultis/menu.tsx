@@ -339,3 +339,26 @@ export const popupMenuOther = [
     },
 
 ]
+export const searchMenu = [
+    {
+        path: 'tat-ca',
+        text: 'TẤT CẢ',
+        end: true,
+    },
+    {
+        path: 'bai-hat',
+        text: 'BÀI HÁT',
+    },
+    {
+        path: 'playlist',
+        text: 'PLAYLIST/ALBUM',
+    },
+    {
+        path: 'nghe-si',
+        text: 'NGHỆ SĨ',
+    },
+    {
+        path: 'mv',
+        text: 'MV',
+    },
+]
