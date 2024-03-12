@@ -8,6 +8,11 @@ import { getHome } from './api';
 import { Provider, useDispatch } from 'react-redux';
 import * as action from './pages/store/actions'
 import WeekRank from './component/chart/WeekRank'
+import mv from './pages/public/search/SearchMV';
+import SearchMV from './pages/public/search/SearchMV';
+import SearchAlbum from './pages/public/search/SearchAlbum';
+import SearchArtist from './pages/public/search/SearchArtist';
+import SearchPlaylist from './pages/public/search/SearchPlaylist';
 
 
 function App() {
@@ -44,9 +49,13 @@ function App() {
         <Route path={path.WEEKRANK_TITLE_PID} element={<WeekRank />} />
         <Route path={path.ALBUM_TITLE_PID} element={<Album err={undefined} data={undefined} />} />
         <Route path={path.ZING_CHART} element={<ZingChart data={undefined} err={0} />} />
+
         <Route path={path.SEARCH} element={<Search />} >
           <Route path={path.ALL} element={<SearchAll />} />
           <Route path={path.SONG} element={<SearchSong />} />
+          <Route path={path.MV} element={<SearchMV />} />
+          <Route path={path.PLAYLIST_SEARCH} element={< SearchPlaylist />} />
+          <Route path={path.SEARCHARTIST} element={<SearchArtist />} />
         </Route>
 
         {/* <Route path={path.STAR} element={<Home />} /> */}

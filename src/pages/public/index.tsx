@@ -10,6 +10,9 @@ export { default as Search } from "./search/Search";
 export { default as SearchSong } from "./search/SearchSong";
 export { default as SearchAll } from "./search/SearchAll";
 export { default as Singer } from "./Singer";
+export { default as SearchMV } from "./search/SearchMV";
+export { default as SearchAlbum } from "./search/SearchAlbum";
+
 
 
 
