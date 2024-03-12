@@ -6,6 +6,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { HiOutlineInboxArrowDown } from "react-icons/hi2";
 import PopupHeader from '../popup/PopupHeader';
 import PopupSetting from '../popup/PopupSetting';
+import { GrClose } from 'react-icons/gr';
 
 const Header = () => {
     // useEffect(() => {
